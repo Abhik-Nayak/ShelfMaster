@@ -9,25 +9,11 @@ const User = require('./models/user');
 
 const app = express();
 
-// app.use((req, res, next) => {
-//   req.on('data', chunk => {
-//     const data = JSON.parse(chunk);
-//     req.body = data;
-//     next();
-//   });
-// });
+
 app.use(cors());
 app.use(express.json());
 app.use(userRouter);
 app.use(todoRouter);
-
-// const test = async (email, password) => {
-//   const user = await User.findOne({ email: email });
-//   const result = await user.comparePassword(password);
-//   console.log(result);
-// };
-
-// test('niraj@email.com', 'niraj12');
 
 app.get('/test', (req, res) => {
   res.send('Hello world');
