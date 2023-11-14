@@ -5,7 +5,6 @@ const cors = require('cors');
 const userRouter = require('./routes/user');
 const todoRouter = require('./routes/todo');
 
-const User = require('./models/user');
 
 const app = express();
 

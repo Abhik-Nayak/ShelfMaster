@@ -31,7 +31,6 @@ exports.createItem = async (req, res) => {
   exports.deleteItem = async (req, res) => {
     try {
       const { id } = req.body;
-      console.log("body", req.body);
       const todo = await Todo.findById(id);
       if (!todo) {
         return res.status(404).json({ error: "Todo not found" });
