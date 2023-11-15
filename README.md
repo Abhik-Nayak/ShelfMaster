@@ -6,3 +6,4 @@ Clone the repository first
 In server Folder add mongodb Usernam and password Like 
     MONGO_DB_USER=Username
     MONGO_DB_PASSWORD=Password
+    JWT_SECRET = code
