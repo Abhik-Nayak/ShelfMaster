@@ -9,13 +9,13 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Todo from './components/Todo/Todo.jsx';
 import "./App.css"
 import axios from 'axios';
+import Home from './components/Home.jsx';
 
 function App() {
   const [loggedin, setLoggedin] = useState();
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
     accessToken ? setLoggedin(true) : setLoggedin(false)
-    console.log("acees",accessToken)
     if (accessToken) {
       axios.get('http://localhost:8001/get-user', {
         headers: { authorization: `Bearer ${accessToken}` },
@@ -42,7 +42,8 @@ function App() {
     <Router>
       <Navbar loggedin={loggedin} />
       <Routes>
-        <Route path="/" element={<Registration />} />
+      <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login setLoggedin={setLoggedin} />} />
         <Route path="/logout" element={<Logout setLoggedin={setLoggedin} />} />
         <Route path="/todo" element={<Todo />} />

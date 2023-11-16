@@ -17,7 +17,7 @@ const Logout = ({ loggedin, setLoggedin }) => {
                 alert(response.data.message)
                 localStorage.removeItem('accessToken');
                 setLoggedin(false);
-                navigate('/');
+                navigate('/register');
             }
 
         }).catch((error) => {

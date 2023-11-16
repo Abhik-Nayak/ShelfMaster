@@ -18,7 +18,7 @@ const Navbar = ({ loggedin }) => {
 	useEffect(() => {
 		loggedin ? setIsloggedin(true) : setIsloggedin(false);
 		if (loggedin === false) { navigate("/login") }
-	}, [loggedin,navigate])
+	}, [loggedin])
 
 	return (
 		<nav className="navbar">
@@ -29,11 +29,11 @@ const Navbar = ({ loggedin }) => {
 				{open ? <FiX /> : <FiMenu />}
 			</div>
 			<ul className={open ? 'nav-links active' : 'nav-links'}>
-				<li className="nav-item">
+			{!isLoggedin ? <li className="nav-item">
 					<Link to="/register" className="nav-link" onClick={closeMenu}>
 						Registration
 					</Link>
-				</li>
+				</li>: ""}
 				{isLoggedin ? <li className="nav-item">
 					<Link to="/logout" className="nav-link" onClick={closeMenu}>
 						Logout
