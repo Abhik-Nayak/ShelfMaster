@@ -1,9 +1,12 @@
-# test_Todo
-Create a simple CRUD to-do list where users can manage their todo list. Users can login to their account where they can manage the todos. Registration is not not required (just provide some sample credentials to test). Design is not important (just make sure that the links are provided in the page). Use jwt to create tokens. 
-
-Note :
-Clone the repository first
-In server Folder add mongodb Usernam and password Like 
-    MONGO_DB_USER=Username
-    MONGO_DB_PASSWORD=Password
-    JWT_SECRET = code
+# Server setup
+npm init -y
+npm i prisma @prisma/client
+npx prisma init
+npm i -D ts-node typescript @types/node
+npx tsc --init
+npm i fs path 
+npx prisma generate
+npx prisma migrate dev --name init
+npm run seed
+npm i express body-parser cors dotenv helmet morgan concurrently
+npm i -D nodemon @types/cors @types/express @types/morgan
