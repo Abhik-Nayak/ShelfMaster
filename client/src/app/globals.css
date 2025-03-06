@@ -18,3 +18,22 @@ body,
   @apply bg-gray-500;
   @apply text-gray-900;
 }
+
+/* Global scrollbar styles */
+* {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #b6c5b7 #f1f1f1; /* For Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bec0be; /* Thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
