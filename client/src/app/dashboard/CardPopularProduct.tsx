@@ -4,9 +4,7 @@ import { ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
 
-type Props = {}
-
-const CardPopularProducts = (props: Props) => {
+const CardPopularProducts = () => {
     const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
     return (
         <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
