@@ -80,6 +80,7 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode;
 }) {
+  //@ts-ignore
   const storeRef = useRef<AppStore>();
   if (!storeRef.current) {
     storeRef.current = makeStore();
