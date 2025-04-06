@@ -28,8 +28,13 @@ app.use("/products", productRoutes); // http://localhost:8000/products
 app.use("/users", userRoutes); // http://localhost:8000/users
 
 
+/* ✅ TEST ROUTE */
+app.get("/test", (req, res) => {
+  res.status(200).json({ message: "API is working! 🎉" });
+});
+
 /* SERVER */
-const port = Number(process.env.PORT) || 3001;
+const port = Number(process.env.PORT) || 8001;
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
